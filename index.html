@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jota R Marketing - Gerador de Relatórios</title>
+    
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="img/logos/LogoBranco.png" alt="Jota R Marketing" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Tela Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Gerador de Relatórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proposal.html">Gerador de Propostas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Gerador de Relatórios de Campanhas</h1>
+        
+        <div class="row">
+            <!-- Formulário de entrada de dados -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Dados da Campanha</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="campaignForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="clientName" class="form-label">Nome do Cliente</label>
+                                    <input type="text" class="form-control" id="clientName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="campaignName" class="form-label">Nome da Campanha</label>
+                                    <input type="text" class="form-control" id="campaignName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="startDate" class="form-label">Data Inicial</label>
+                                    <input type="date" class="form-control" id="startDate" required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="endDate" class="form-label">Data Final</label>
+                                    <input type="date" class="form-control" id="endDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="objective" class="form-label">Objetivo</label>
+                                    <select class="form-select" id="objective" required>
+                                        <option value="" selected disabled>Selecione um objetivo</option>
+                                        <option value="Tráfego">Tráfego</option>
+                                        <option value="Engajamento">Engajamento</option>
+                                        <option value="Conversão">Conversão</option>
+                                        <option value="Reconhecimento">Reconhecimento de Marca</option>
+                                        <option value="Vendas">Vendas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="reach" class="form-label">Alcance Total</label>
+                                    <input type="number" class="form-control" id="reach" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="impressions" class="form-label">Impressões</label>
+                                    <input type="number" class="form-control" id="impressions" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="clicks" class="form-label">Cliques</label>
+                                    <input type="number" class="form-control" id="clicks" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="ctr" class="form-label">CTR (%)</label>
+                                    <input type="number" step="0.01" class="form-control" id="ctr" required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="investment" class="form-label">Investimento Total (R$)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" step="0.01" class="form-control" id="investment" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cpr" class="form-label">Custo por Resultado (R$)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" step="0.01" class="form-control" id="cpr" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="results" class="form-label">Resultados</label>
+                                    <input type="number" class="form-control" id="results" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="observations" class="form-label">Observações ou Insights</label>
+                                <textarea class="form-control" id="observations" rows="3"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="recommendations" class="form-label">Recomendação para o Próximo Mês</label>
+                                <textarea class="form-control" id="recommendations" rows="3"></textarea>
+                            </div>
+                            
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-secondary me-md-2" id="resetBtn">Limpar</button>
+                                <button type="button" class="btn btn-primary" id="generateReportBtn">Gerar Relatório</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Área de visualização do relatório (inicialmente oculta) -->
+            <div class="col-lg-12 mt-4" id="reportPreview" style="display: none;">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Pré-visualização do Relatório</h5>
+                        <div>
+                            <button class="btn btn-sm btn-outline-light me-2" id="downloadPdfBtn">
+                                <i class="fas fa-file-pdf me-1"></i> Baixar PDF
+                            </button>
+                            <button class="btn btn-sm btn-outline-light" id="shareBtn">
+                                <i class="fas fa-share-alt me-1"></i> Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="reportContent" class="report-container">
+                            <!-- O conteúdo do relatório será gerado dinamicamente aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Jota R Marketing. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- jsPDF via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- html2canvas via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script src="js/app.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/logo-helper.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+/* Estilos específicos para a funcionalidade de geração de propostas */
+
+.proposal-form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.proposal-form .form-label {
+    font-weight: 500;
+    color: #004225;
+}
+
+.proposal-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.proposal-section:last-child {
+    border-bottom: none;
+}
+
+.service-item {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #FFA725;
+}
+
+.service-item .remove-service {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.add-service-btn {
+    background-color: #004225;
+    color: white;
+    border: none;
+}
+
+.add-service-btn:hover {
+    background-color: #003018;
+}
+
+.proposal-preview {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-cover {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.proposal-cover h1 {
+    color: #004225;
+    margin-top: 20px;
+}
+
+.proposal-cover h3 {
+    color: #FFA725;
+    margin-bottom: 20px;
+}
+
+.proposal-section-title {
+    color: #004225;
+    border-bottom: 2px solid #FFA725;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.proposal-objective {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.proposal-service {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #FFA725;
+}
+
+.proposal-service h4 {
+    color: #004225;
+    margin-bottom: 10px;
+}
+
+.proposal-service .service-price {
+    font-weight: bold;
+    color: #FFA725;
+    font-size: 1.1em;
+}
+
+.proposal-total {
+    background-color: #004225;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.proposal-total .discount {
+    color: #FFA725;
+    font-weight: bold;
+}
+
+.proposal-cta {
+    background-color: #FFA725;
+    color: #004225;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.2em;
+}
+
+.proposal-signature {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+
+.signature-line {
+    border-top: 1px solid #333;
+    margin-top: 50px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.action-buttons {
+    margin-top: 30px;
+}
+
+.action-buttons .btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-proposal-primary {
+    background-color: #004225;
+    color: white;
+}
+
+.btn-proposal-secondary {
+    background-color: #FFA725;
+    color: #004225;
+}

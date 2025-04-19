@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jota R Marketing - Gerador de Propostas</title>
+    
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/proposal.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="img/logos/LogoBranco.png" alt="Jota R Marketing" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Tela Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Gerador de Relatórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="proposal.html">Gerador de Propostas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Gerador de Propostas Comerciais</h1>
+        
+        <div class="row">
+            <!-- Formulário de entrada de dados -->
+            <div class="col-lg-12 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Dados da Proposta</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="proposalForm">
+                            <!-- Dados do Cliente -->
+                            <div class="proposal-section">
+                                <h4>Dados do Cliente</h4>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="clientName" class="form-label">Nome do Cliente/Empresa</label>
+                                        <input type="text" class="form-control" id="clientName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="clientContact" class="form-label">WhatsApp ou E-mail para Contato</label>
+                                        <input type="text" class="form-control" id="clientContact" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="clientSegment" class="form-label">Segmento ou Ramo de Atuação</label>
+                                    <input type="text" class="form-control" id="clientSegment" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="clientDocument" class="form-label">CNPJ/CPF</label>
+                                    <input type="text" class="form-control" id="clientDocument" placeholder="Ex: 00.000.000/0001-00 ou 000.000.000-00">
+                                </div>
+                            </div>
+                            
+                            <!-- Objetivos do Cliente -->
+                            <div class="proposal-section">
+                                <h4>Objetivos do Cliente</h4>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Atrair mais leads" id="objectiveLeads">
+                                        <label class="form-check-label" for="objectiveLeads">
+                                            Atrair mais leads
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vender mais" id="objectiveSales">
+                                        <label class="form-check-label" for="objectiveSales">
+                                            Vender mais
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Se posicionar no Instagram" id="objectiveInstagram">
+                                        <label class="form-check-label" for="objectiveInstagram">
+                                            Se posicionar no Instagram
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Crescer com tráfego pago" id="objectiveTraffic">
+                                        <label class="form-check-label" for="objectiveTraffic">
+                                            Crescer com tráfego pago
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="otherObjectives" class="form-label">Outros Objetivos</label>
+                                    <textarea class="form-control" id="otherObjectives" rows="2"></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Serviços Propostos -->
+                            <div class="proposal-section">
+                                <h4>Serviços Propostos</h4>
+                                <div id="servicesContainer">
+                                    <!-- Serviço 1 (padrão) -->
+                                    <div class="service-item" id="service-1">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="serviceTitle-1" class="form-label">Título do Serviço</label>
+                                                <input type="text" class="form-control" id="serviceTitle-1" placeholder="Ex: Gestão de redes sociais" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="servicePrice-1" class="form-label">Valor (R$)</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="number" step="0.01" class="form-control" id="servicePrice-1" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="serviceDescription-1" class="form-label">Descrição do Serviço</label>
+                                            <textarea class="form-control" id="serviceDescription-1" rows="2" placeholder="Ex: Criação de conteúdo, cronograma, publicações, interação" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn add-service-btn mt-2" id="addServiceBtn">
+                                    <i class="fas fa-plus me-2"></i>Adicionar Serviço
+                                </button>
+                            </div>
+                            
+                            <!-- Investimento em Anúncios -->
+                            <div class="proposal-section">
+                                <h4>Investimento em Anúncios</h4>
+                                <div class="mb-3">
+                                    <label for="adInvestment" class="form-label">Investimento Diário Recomendado (R$)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" step="0.01" class="form-control" id="adInvestment" placeholder="Ex: 20.00">
+                                    </div>
+                                    <div class="form-text">Valor diário recomendado para investimento em anúncios.</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Condições da Proposta -->
+                            <div class="proposal-section">
+                                <h4>Condições da Proposta</h4>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validityPeriod" class="form-label">Prazo de Validade da Proposta</label>
+                                        <input type="text" class="form-control" id="validityPeriod" placeholder="Ex: 5 dias / até quinta-feira" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="discountPercentage" class="form-label">Desconto (%)</label>
+                                        <div class="input-group">
+                                            <input type="number" step="1" min="0" max="100" class="form-control" id="discountPercentage" placeholder="Ex: 10">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="additionalNotes" class="form-label">Observações Adicionais</label>
+                                    <textarea class="form-control" id="additionalNotes" rows="3"></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Botões de Ação -->
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-secondary me-md-2" id="resetBtn">Limpar</button>
+                                <button type="button" class="btn btn-primary" id="generateProposalBtn">Gerar Proposta</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visualização da Proposta (inicialmente oculta) -->
+            <div class="col-lg-12" id="proposalPreview" style="display: none;">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Proposta Comercial</h5>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary me-2" id="editProposalBtn">
+                                <i class="fas fa-edit me-1"></i>Editar
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary me-2" id="downloadPDFBtn">
+                                <i class="fas fa-file-pdf me-1"></i>Baixar PDF
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" id="shareProposalBtn">
+                                <i class="fas fa-share-alt me-1"></i>Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="proposalContent" class="proposal-preview">
+                            <!-- O conteúdo da proposta será gerado dinamicamente pelo JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 bg-light">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 Jota R Marketing. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- jsPDF e html2canvas para exportação de PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script src="js/proposal.js"></script>
+</body>
+</html>
